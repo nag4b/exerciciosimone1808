@@ -1,0 +1,30 @@
+from datetime import datetime
+
+def cadastrar_pessoa():
+    nome = input("Nome: ")
+    rg = input("RG: ")
+    cpf = input("CPF: ")
+    data_nasc = input("Data de nascimento (dd/mm/aaaa): ")
+    nascimento = datetime.strptime(data_nasc, "%d/%m/%Y")
+    idade = datetime.today().year - nascimento.year
+
+    info = (
+        f"Nome: {nome}\n"
+        f"RG: {rg}\n"
+        f"CPF: {cpf}\n"
+        f"Data de Nascimento: {data_nasc}\n"
+        f"Idade: {idade} anos\n"
+        + "-"*20 + "\n"
+    )
+
+    with open("dados_pessoais.txt", "a") as arq:
+        arq.write(info)
+    print("Dados salvos com sucesso!")
+
+def mostrar_dados_salvos():
+    with open("dados_pessoais.txt") as arq:
+        print("\nConteúdo do arquivo dados_pessoais.txt:")
+        print(arq.read())
+
+cadastrar_pessoa()
+mostrar_dados_salvos()
