@@ -1,0 +1,7 @@
+Primeiro número: 20
+Segundo número: 10
+--------------------
+Soma: 30
+Subtração: 10
+Multiplicação: 200
+Divisão: 2.00
