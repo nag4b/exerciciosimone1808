@@ -1,0 +1,17 @@
+def ler_arquivo_para_lista(nome_arquivo):
+    try:
+        with open(nome_arquivo, 'r') as arquivo:
+            linhas = arquivo.readlines()
+            lista_de_linhas = [linha.strip() for linha in linhas]
+        return lista_de_linhas
+    except FileNotFoundError:
+        print(f"Erro: O arquivo '{nome_arquivo}' não foi encontrado.")
+        return []
+
+nome_do_arquivo = input("Por favor, digite o nome do arquivo TXT que deseja ler: ")
+conteudo_do_arquivo = ler_arquivo_para_lista(nome_do_arquivo)
+
+if conteudo_do_arquivo:
+    print("\nO conteúdo do arquivo foi lido e inserido na lista:")
+    for linha in conteudo_do_arquivo:
+        print(linha)
