@@ -1,0 +1,25 @@
+def mini_calculadora():
+    try:
+        num1 = int(input("Digite o primeiro número inteiro: "))
+        num2 = int(input("Digite o segundo número inteiro: "))
+
+        soma = num1 + num2
+        subtracao = num1 - num2
+        multiplicacao = num1 * num2
+        divisao = "Não é possível dividir por zero." if num2 == 0 else f"{num1 / num2:.2f}"
+
+        with open("resultados_calculadora.txt", "w") as arquivo:
+            arquivo.write(f"Primeiro número: {num1}\n")
+            arquivo.write(f"Segundo número: {num2}\n")
+            arquivo.write("-" * 20 + "\n")
+            arquivo.write(f"Soma: {soma}\n")
+            arquivo.write(f"Subtração: {subtracao}\n")
+            arquivo.write(f"Multiplicação: {multiplicacao}\n")
+            arquivo.write(f"Divisão: {divisao}\n")
+
+        print("\nResultados salvos em 'resultados_calculadora.txt'.")
+
+    except ValueError:
+        print("Por favor, digite apenas números inteiros.")
+
+mini_calculadora()
