@@ -1,0 +1,12 @@
+def calcular_media_e_salvar_dados():
+    nome = input("Nome do aluno: ")
+    notas = [float(input(f"Nota {i+1}: ")) for i in range(2)]
+    media = sum(notas) / 2
+    situacao = "Aprovado(a)" if media >= 6 else "Reprovado(a)"
+
+    with open("resultado_alunos.txt", "a") as f:
+        f.write(f"Nome: {nome}\nMédia: {media:.2f}\nSituação: {situacao}\n{'-'*20}\n")
+
+    print(f"\nDados salvos! Média: {media:.2f} | Situação: {situacao}")
+
+calcular_media_e_salvar_dados()
