@@ -1,0 +1,6 @@
+Nome: ana
+RG: 16343339779
+CPF: 16343339779
+Data de Nascimento: 09/10/2006
+Idade: 19 anos
+--------------------
